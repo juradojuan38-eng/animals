@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Contracts\AnimalServiceInterface;
-use App\Services\SessionAnimalService;
+use App\Services\FileAnimalService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(AnimalServiceInterface::class, SessionAnimalService::class);
+        $this->app->bind(AnimalServiceInterface::class, FileAnimalService::class);
     }
 
     /**
